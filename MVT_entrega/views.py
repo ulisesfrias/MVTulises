@@ -1,15 +1,15 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from MVT_entrega.models import familia1 
+from MVT_entrega.models import familia 
 
 
 # Create your views here.
 
 def listado_de_familia(request):
-    listado = familia1.objects.all()
+    listado = familia.objects.all()
 
     Vista = ""
     for FAMILIA in listado:
-        Vista += f"({FAMILIA.nombre},{FAMILIA.edad})" + " | "
+        Vista += f"({FAMILIA.nombres},{FAMILIA.edad})" + " | "
 
     return HttpResponse(Vista)
